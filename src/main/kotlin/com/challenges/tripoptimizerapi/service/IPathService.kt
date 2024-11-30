@@ -5,4 +5,5 @@ import com.challenges.tripoptimizerapi.dto.resource.PathResource
 
 interface IPathService {
     fun savePath(pathId: Long, pathCreationDto: PathCreationDto): PathResource
+    fun getOptinalPath(sourceId: Long, destinationId: Long)
 }
