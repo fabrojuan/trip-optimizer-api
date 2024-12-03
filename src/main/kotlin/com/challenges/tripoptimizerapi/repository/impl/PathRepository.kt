@@ -18,4 +18,8 @@ class PathRepository: IPathRepository {
         return path
     }
 
+    override fun findAll(): List<Path> {
+        return pathsCollection
+    }
+
 }

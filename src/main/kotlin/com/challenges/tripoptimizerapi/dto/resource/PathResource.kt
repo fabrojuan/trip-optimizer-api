@@ -2,7 +2,7 @@ package com.challenges.tripoptimizerapi.dto.resource
 
 import com.fasterxml.jackson.annotation.JsonProperty
 
-class PathResource {
+class PathResource: ErrorResource() {
     @JsonProperty("path_id")
     var id: Long? = null
     @JsonProperty("source_id")

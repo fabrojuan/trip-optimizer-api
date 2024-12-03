@@ -1,6 +1,7 @@
 package com.challenges.tripoptimizerapi.controller
 
 import com.challenges.tripoptimizerapi.dto.PathCreationDto
+import com.challenges.tripoptimizerapi.dto.resource.OptimalPathResource
 import com.challenges.tripoptimizerapi.dto.resource.PathResource
 import com.challenges.tripoptimizerapi.service.IPathService
 import io.swagger.v3.oas.annotations.Operation
@@ -23,8 +24,8 @@ class PathController(val pathService: IPathService) {
     @GetMapping("/{source_id}/{destination_id}")
     @Operation(summary = "Get optimal Path", description = "Retrieve an optimal path between an origin and a destination")
     fun getOptimalPath(@PathVariable(name = "source_id") sourceId: Long,
-                       @PathVariable(name = "destination_id") destinationId: Long) {
-
+                       @PathVariable(name = "destination_id") destinationId: Long): ResponseEntity<OptimalPathResource> {
+        return ResponseEntity.ok(pathService.getOptimalPath(sourceId, destinationId))
     }
 
 }

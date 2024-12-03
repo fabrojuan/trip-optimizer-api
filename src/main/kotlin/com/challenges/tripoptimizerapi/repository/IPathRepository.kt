@@ -4,4 +4,6 @@ import com.challenges.tripoptimizerapi.model.Path
 
 interface IPathRepository {
     fun save(path: Path): Path
+
+    fun findAll(): List<Path>
 }

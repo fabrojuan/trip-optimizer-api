@@ -20,7 +20,7 @@ class StationController(val stationService: IStationService) {
     @PutMapping("/{station_id}")
     @Operation(summary = "Create Station", description = "Create a new station with its name")
     fun createStation(@PathVariable(name = "station_id") stationId: Long,
-                      @RequestBody stationCrationData: StationCreationDto): ResponseEntity<StationResource> {
-        return ResponseEntity.ok(stationService.saveStation(stationId, stationCrationData))
+                      @RequestBody stationCreationData: StationCreationDto): ResponseEntity<StationResource> {
+        return ResponseEntity.ok(stationService.saveStation(stationId, stationCreationData))
     }
 }
